@@ -1,6 +1,6 @@
 # Task S2.04 – MongoDB Queries
 
-A collection of 32 MongoDB queries run against `restaurants` sample dataset.
+A collection of 32 MongoDB queries run against the `restaurants` sample dataset, together with reports that check each query's results and analyse its performance.
 
 ## Contents
 
@@ -8,6 +8,8 @@ A collection of 32 MongoDB queries run against `restaurants` sample dataset.
 |------|-------------|
 | `docker-compose.yml` | Spins up a local MongoDB 8.0 instance for development. |
 | `queries.js` | The 32 exercise queries, each preceded by a comment describing what it does (comments in Catalan). |
+| `resultReport.md` | Comparison of each query's output with the expected result. |
+| `performanceReport.md` | Execution statistics for each query (`explain`), with any issues detected and suggested indexes. |
 | `LICENSE` | Project licence. |
 
 ## Requirements
@@ -62,21 +64,21 @@ mongodb://admin:dev_password_123@localhost:27017/?authSource=admin
 
 ## Queries overview
 
-| # | Topic |
-|---|-------|
-| 1–4 | Basic `find` and field projection |
-| 5–7 | Filtering by borough, with `limit` and `skip` |
-| 8–12 | Numeric comparisons on scores and coordinates, `$elemMatch`, implicit vs explicit `$and` |
-| 13 | Combined filters with sorting |
-| 14–16 | Pattern matching with `$regex` (starts with, ends with, contains) |
-| 17–19 | Set membership with `$in` and `$nin` |
-| 20–21 | Score thresholds and combined `$and` / `$or` logic |
-| 22–23 | Matching array elements, including by position (`grades.1`) |
-| 24 | Geospatial search with a `2dsphere` index and `$near` |
-| 25–27 | Sorting on one or more fields |
-| 28–29 | Field existence (`$exists`) and BSON type checks (`$type`) |
-| 30 | Modulo filtering with `$mod` |
-| 31–32 | Case-insensitive regex and score ranges |
+| #     | Topic                                                                                    |
+| ----- | ---------------------------------------------------------------------------------------- |
+| 1–4   | Basic `find` and field projection                                                        |
+| 5–7   | Filtering by borough, with `limit` and `skip`                                            |
+| 8–12  | Numeric comparisons on scores and coordinates, `$elemMatch`, implicit vs explicit `$and` |
+| 13    | Combined filters with sorting                                                            |
+| 14–16 | Pattern matching with `$regex` (starts with, ends with, contains)                        |
+| 17–19 | Set membership with `$in` and `$nin`                                                     |
+| 20–21 | Score thresholds and combined `$and` / `$or` logic                                       |
+| 22–23 | Matching array elements, including by position (`grades.1`)                              |
+| 24    | Geospatial search with a `2dsphere` index and `$near`                                    |
+| 25–27 | Sorting on one or more fields                                                            |
+| 28–29 | Field existence (`$exists`) and BSON type checks (`$type`)                               |
+| 30    | Modulo filtering with `$mod`                                                             |
+| 31–32 | Case-insensitive regex and score ranges                                                  |
 
 ## Stopping the environment
 
